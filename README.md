@@ -1,4 +1,5 @@
-Sorting Algorithms & Big O Notation
+## Sorting Algorithms & Big O Notation
+
 This repository contains implementations of various sorting algorithms in C, along with analyses of their time complexities using Big O notation.
 
 Overview
@@ -38,7 +39,8 @@ int main(void)
     return 0;
 }
 
-Time Complexity
+## Time Complexity
+
 The repository also includes files documenting the time complexities of each sorting algorithm:
 
 0-O for Bubble Sort
