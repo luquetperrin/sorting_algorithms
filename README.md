@@ -43,9 +43,9 @@ int main(void)
 
 The repository also includes files documenting the time complexities of each sorting algorithm:
 
-0-O for Bubble Sort
-1-O for Insertion Sort
-2-O for Selection Sort
-3-O for Quick Sort
-... and more.
+# 0-O for Bubble Sort
+# 1-O for Insertion Sort
+# 2-O for Selection Sort
+" 3-O for Quick Sort
+# ... and more.
 Each file lists the time complexity for the best, average, and worst-case scenarios.
