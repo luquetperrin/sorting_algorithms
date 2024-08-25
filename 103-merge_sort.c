@@ -10,22 +10,23 @@
  */
 void merge(int *array, int *buff, size_t left_start, size_t mid, size_t right_end)
 {
-    size_t i = left_start, j = mid, k = left_start;
+	size_t i = left_start, j = mid, k = left_start;
 
-    while (i < mid && j < right_end) {
-        if (array[i] < array[j])
-            buff[k++] = array[i++];
-        else
-            buff[k++] = array[j++];
-    }
+	while (i < mid && j < right_end)
+	{
+		if (array[i] < array[j])
+			buff[k++] = array[i++];
+		else
+			buff[k++] = array[j++];
+	}
 
-    while (i < mid)
-        buff[k++] = array[i++];
-    while (j < right_end)
-        buff[k++] = array[j++];
+	while (i < mid)
+		buff[k++] = array[i++];
+	while (j < right_end)
+		buff[k++] = array[j++];
 
-    for (i = left_start; i < right_end; i++)
-        array[i] = buff[i];
+	for (i = left_start; i < right_end; i++)
+		array[i] = buff[i];
 }
 
 /**
@@ -37,16 +38,17 @@ void merge(int *array, int *buff, size_t left_start, size_t mid, size_t right_en
  */
 void merge_sort_recursive(int *array, int *buff, size_t left_start, size_t right_end)
 {
-    size_t mid;
+	size_t mid;
 
-    if (right_end - left_start <= 1)
-        return;
+	if (right_end - left_start <= 1)
+		return;
 
-    mid = (left_start + right_end) / 2;
+	mid = (left_start + right_end) / 2;
 
-    merge_sort_recursive(array, buff, left_start, mid);
-    merge_sort_recursive(array, buff, mid, right_end);
-    merge(array, buff, left_start, mid, right_end);
+	merge_sort_recursive(array, buff, left_start, mid);
+	merge_sort_recursive(array, buff, mid, right_end);
+	merge(array, buff, left_start,
+	      mid, right_end);
 }
 
 /**
@@ -56,16 +58,16 @@ void merge_sort_recursive(int *array, int *buff, size_t left_start, size_t right
  */
 void merge_sort(int *array, size_t size)
 {
-    int *buff;
+	int *buff;
 
-    if (size < 2)
-        return;
+	if (size < 2)
+		return;
 
-    buff = malloc(size * sizeof(int));
-    if (!buff)
-        return;
+	buff = malloc(size * sizeof(int));
+	if (!buff)
+		return;
 
-    merge_sort_recursive(array, buff, 0, size);
+	merge_sort_recursive(array, buff, 0, size);
 
-    free(buff);
+	free(buff);
 }
